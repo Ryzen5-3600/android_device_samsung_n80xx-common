@@ -20,11 +20,11 @@
 
 WITHOUT_UPDATE := false
 
-WITHOUT_JELLY := true
+WITHOUT_JELLY := false
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/n80xx
-TARGET_KERNEL_CONFIG := lineageos_$(TARGET_DEVICE)_defconfig
+TARGET_KERNEL_CONFIG := lineageos_n8013_defconfig
 
 # Wifi
 WIFI_DRIVER_MODULE_PATH :=
