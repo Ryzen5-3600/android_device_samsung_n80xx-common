@@ -44,6 +44,11 @@ ifeq ($(TARGET_PRODUCT),lineage_n8010)
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/n80xx-common/include
 endif
 
+ifeq ($(TARGET_PRODUCT),lineage_n8013)
+# Headers
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/n80xx-common/include
+endif
+
 #Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/n80xx-common/bluetooth
 
