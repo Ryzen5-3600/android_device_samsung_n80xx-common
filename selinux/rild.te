@@ -19,6 +19,3 @@ allow rild efs_file:file { read open write setattr };
 
 allow rild efs_device_file:dir create_dir_perms;
 allow rild efs_device_file:file { setattr create create_file_perms };
-allow rild system_data_file:dir { write setattr };
-#allow rild system_data_file:file { write };
-allow rild system_data_file:dir { add_name remove_name };

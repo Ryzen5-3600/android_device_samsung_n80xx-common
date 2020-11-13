@@ -18,18 +18,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#if N8000
-#define BTM_DEF_LOCAL_NAME   "GT-N8000"
-#endif
-#if N8010
-#define BTM_DEF_LOCAL_NAME   "GT-N8010"
-#endif
-#if N8020
-#define BTM_DEF_LOCAL_NAME   "GT-N8020"
-#endif
-#if I925
-#define BTM_DEF_LOCAL_NAME   "SCH-I925"
-#endif
+#define BTM_DEF_LOCAL_NAME   "Galaxy Note 10.1"
 
 /* Defined if the kernel does not have support for CLOCK_BOOTTIME_ALARM */
 #define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE

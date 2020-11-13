@@ -1,4 +1,4 @@
-<!-- TinyHAL configuration file for Samsung Galaxy Note 10.1 -->
+<!-- TinyHAL configuration file for Samsung Galaxy S III -->
 <tinyhal>
 <!--
 We are able to have most of our routing static so do that
@@ -254,16 +254,14 @@ We are able to have most of our routing static so do that
         <ctl name="IN1L Volume" val="10"/>
     </path>
 </device>
-<device name="headset-in">
+<device name="back-mic">
     <path name="on">
         <ctl name="Sub Mic Switch" val="1"/>
         <ctl name="IN1R Volume" val="22"/>
         <ctl name="MIXINR IN1R Switch" val="1"/>
         <ctl name="MIXINR IN1R Volume" val="1"/>
-        <ctl name="AIF1ADCL Source" val="Right"/>
-        <ctl name="AIF1ADCR Source" val="Right"/>
-        <ctl name="AIF2ADCL Source" val="Right"/>
-        <ctl name="AIF2ADCR Source" val="Right"/>
+        <ctl name="AIF1ADCR Source" val="1"/>
+        <ctl name="AIF2ADCR Source" val="1"/>
         <ctl name="AIF1ADC1 HPF Mode" val="1"/>
         <ctl name="AIF1ADC1 HPF Switch" val="1"/>
         <ctl name="AIF1ADC1 Volume" val="96"/>
@@ -274,7 +272,7 @@ We are able to have most of our routing static so do that
         <ctl name="IN1R Volume" val="10"/>
     </path>
 </device>
-<device name="back-mic">
+<device name="headset-in">
     <path name="on">
         <ctl name="MIXINL IN1L Switch" val="0"/>
         <ctl name="MIXINR IN1R Switch" val="0"/>

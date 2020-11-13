@@ -18,14 +18,15 @@ $(call inherit-product, device/samsung/smdk4412-common/common.mk)
 
 LOCAL_PATH := device/samsung/n80xx-common
 
-TARGET_BUILD_VARIANT:=user
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-common
 
 # Screen density
 PRODUCT_AAPT_CONFIG := xlarge mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
+
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 1280
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -35,17 +36,8 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/n80xx
-
-# prebuild apps
-
-PRODUCT_PACKAGES += \
-	MagiskManager \
-	OpenCamera \
-	Via
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/n80xx
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -64,6 +56,7 @@ PRODUCT_COPY_FILES += \
 # Product specific Packages
 PRODUCT_PACKAGES += \
     tinyplay \
+    Snap \
     libsecril-client
 
 # Sensors
@@ -74,44 +67,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.smdk4x12
 
-ifeq ($(TARGET_PRODUCT),lineage_n8000)
 # Gps
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/gps_daemon.sh:system/vendor/bin/gps_daemon.sh
+    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
 
 PRODUCT_PACKAGES += \
 	gps.smdk4x12
-endif
-
-ifeq ($(TARGET_PRODUCT),lineage_n8000_deodexed)
-# Gps
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/gps_daemon.sh:system/vendor/bin/gps_daemon.sh
-
-PRODUCT_PACKAGES += \
-	gps.smdk4x12
-endif
-
-ifeq ($(TARGET_PRODUCT),lineage_n8010)
-# Gps
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml \
-    $(LOCAL_PATH)/gps_daemon.sh:system/vendor/bin/gps_daemon.sh
-
-PRODUCT_PACKAGES += \
-	gps.smdk4x12
-endif
-
-# sec_keyboard
-PRODUCT_PACKAGES += \
-	sec_keyboard \
-	libkeyutils
-
-# shim libs for gpsd
-    PRODUCT_PACKAGES += \
-        libn80xx
 
 # RIL
 PRODUCT_PACKAGES += \
